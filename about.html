@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KnowledgeHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="floating-shape shape4"></div>
+        <div class="particles-container"></div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-brain logo-icon"></i>
+            <h2>KnowledgeHub<span class="logo-dot">.</span></h2>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="nav-link"><i class="fas fa-file-alt"></i> Tests</a>
+            <a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            <span id="user" class="user-welcome"></span>
+            <button class="btn btn-login" onclick="openLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button class="btn btn-register" onclick="openRegister()"><i class="fas fa-user-plus"></i> Register</button>
+            <button class="btn btn-logout" onclick="logout()" id="logoutBtn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1 class="animate-text">About <span class="highlight">KnowledgeHub</span></h1>
+            <p class="about-subtitle">Empowering learners through interactive assessment and skill development</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="about-container">
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>Our <span class="highlight">Mission</span></h2>
+                    <p>At KnowledgeHub, we believe that assessment is the first step towards mastery. Our mission is to provide a comprehensive, engaging, and accessible platform for learners worldwide to test their knowledge, track progress, and achieve their educational goals.</p>
+                    <p>We combine cutting-edge technology with pedagogical expertise to create tests that are not just assessments, but learning experiences in themselves.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section reverse">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Our <span class="highlight">Journey</span></h2>
+                    <p>Founded in 2020, KnowledgeHub started as a small project by a group of educators and technologists. Today, we serve over 50,000 learners across 120 countries, offering more than 150 specialized tests across various domains.</p>
+                    <div class="journey-stats">
+                        <div class="journey-stat">
+                            <h3>50K+</h3>
+                            <p>Active Learners</p>
+                        </div>
+                        <div class="journey-stat">
+                            <h3>150+</h3>
+                            <p>Tests Available</p>
+                        </div>
+                        <div class="journey-stat">
+                            <h3>95%</h3>
+                            <p>User Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h2>Meet Our <span class="highlight">Team</span></h2>
+                <p class="section-subtitle">Passionate professionals dedicated to your learning journey</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Dr. Sarah Chen</h3>
+                        <p class="team-role">Chief Learning Officer</p>
+                        <p class="team-bio">Ph.D. in Educational Technology with 15+ years in curriculum design</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Michael Rodriguez</h3>
+                        <p class="team-role">CTO & Lead Developer</p>
+                        <p class="team-bio">Full-stack developer specializing in educational platforms</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Priya Sharma</h3>
+                        <p class="team-role">Content Strategist</p>
+                        <p class="team-bio">Expert in test creation and knowledge validation methodologies</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-medium"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>David Kim</h3>
+                        <p class="team-role">UX/UI Designer</p>
+                        <p class="team-bio">Creates intuitive learning interfaces with 8+ years experience</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="values-section">
+                <h2>Our <span class="highlight">Values</span></h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Quality Education</h3>
+                        <p>Every test is crafted by subject matter experts and validated for accuracy.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Inclusivity</h3>
+                        <p>Our platform is designed to be accessible to learners of all backgrounds.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Continuous Improvement</h3>
+                        <p>We regularly update tests based on user feedback and changing knowledge standards.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Data Privacy</h3>
+                        <p>Your learning data is protected with enterprise-grade security measures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include the same popups from index.html -->
+    <!-- LOGIN POPUP -->
+    <div class="popup-overlay" id="loginOverlay">
+        <div class="popup-container" id="login">
+            <div class="popup-header">
+                <h3><i class="fas fa-sign-in-alt"></i> Login to KnowledgeHub</h3>
+                <button class="close-popup" onclick="closeAll()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="lemail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="lpass" placeholder="Password" required>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('lpass')"></i>
+                </div>
+                <div class="popup-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button class="popup-btn primary-btn" onclick="login()">Login Now</button>
+                <div class="popup-divider">
+                    <span>Or continue with</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Google</button>
+                    <button class="social-btn github-btn"><i class="fab fa-github"></i> GitHub</button>
+                </div>
+                <p class="popup-footer">Don't have an account? <a href="#" onclick="switchToRegister()">Register here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER POPUP -->
+    <div class="popup-overlay" id="registerOverlay">
+        <div class="popup-container" id="register">
+            <div class="popup-header">
+                <h3><i class="fas fa-user-plus"></i> Create Account</h3>
+                <button class="close-popup" onclick="closeAll()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="rname" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="remail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rpass" placeholder="Password (min. 8 characters)" required>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('rpass')"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rcpass" placeholder="Confirm Password" required>
+                </div>
+                <div class="popup-options">
+                    <label>
+                        <input type="checkbox" required> I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button class="popup-btn primary-btn" onclick="register()">Create Account</button>
+                <p class="popup-footer">Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <i class="fas fa-brain logo-icon"></i>
+                    <h3>KnowledgeHub<span class="logo-dot">.</span></h3>
+                </div>
+                <p>Master your skills with our comprehensive online examination platform.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="#">All Tests</a>
+                <a href="#">Practice Mode</a>
+                <a href="#">Leaderboard</a>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <a href="#">Programming</a>
+                <a href="#">General Knowledge</a>
+                <a href="#">Current Affairs</a>
+                <a href="#">Certification</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96e5e3e6e6f9e4e2d6fdf8f9e1faf3f2f1f3fee3f4b8f5f9fb">[email&#160;protected]</a></p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Learning St, Education City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KnowledgeHub. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+            <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+footer-bottom">
+            <p>&copy; 2024 KnowledgeHub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

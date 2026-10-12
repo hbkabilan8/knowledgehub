@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowledgeHub - Online Examination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="floating-shape shape4"></div>
+        <div class="particles-container"></div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-brain logo-icon"></i>
+            <h2>KnowledgeHub<span class="logo-dot">.</span></h2>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="tests.html" class="nav-link"><i class="fas fa-file-alt"></i> Tests</a>
+            <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            <span id="user" class="user-welcome"></span>
+            <button class="btn btn-login" onclick="openLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button class="btn btn-register" onclick="openRegister()"><i class="fas fa-user-plus"></i> Register</button>
+            <button class="btn btn-logout" onclick="logout()" id="logoutBtn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-text">Challenge Your <span class="highlight">Intellect</span></h1>
+            <p class="hero-subtitle">Master Programming, General Knowledge, Current Affairs, and Specialized Courses</p>
+            <div class="stats-container">
+                <div class="stat">
+                    <h3>150+</h3>
+                    <p>Tests Available</p>
+                </div>
+                <div class="stat">
+                    <h3>10K+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+            <button class="btn-hero" onclick="scrollToTests()">Explore Tests <i class="fas fa-arrow-down"></i></button>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="tests-section" id="testsSection">
+        <h2 class="section-title">Featured <span class="highlight">Examinations</span></h2>
+        <p class="section-subtitle">Select from our diverse range of knowledge tests and courses</p>
+        
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterTests('all')">All</button>
+            <button class="filter-btn" onclick="filterTests('programming')">Programming</button>
+            <button class="filter-btn" onclick="filterTests('gk')">General Knowledge</button>
+            <button class="filter-btn" onclick="filterTests('courses')">Courses</button>
+        </div>
+        
+        <div class="tests-grid">
+            <div class="test-card" data-category="programming">
+                <div class="card-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <h3>JavaScript Mastery</h3>
+                <p>Advanced JavaScript concepts, ES6+, frameworks and real-world problems</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Questions</span>
+                    <span><i class="fas fa-clock"></i> 60 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(1, 'JavaScript Mastery')">Start Test</button>
+                <div class="difficulty easy">Beginner Friendly</div>
+            </div>
+            
+            <div class="test-card" data-category="programming">
+                <div class="card-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Programming</h3>
+                <p>Data structures, algorithms, OOP concepts and Python libraries</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 45 Questions</span>
+                    <span><i class="fas fa-clock"></i> 45 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(2, 'Python Programming')">Start Test</button>
+                <div class="difficulty intermediate">Intermediate</div>
+            </div>
+            
+            <div class="test-card" data-category="gk">
+                <div class="card-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Current Affairs 2024</h3>
+                <p>Latest events in politics, technology, sports and international relations</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 40 Questions</span>
+                    <span><i class="fas fa-clock"></i> 30 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(3, 'Current Affairs 2024')">Start Test</button>
+                <div class="difficulty easy">Updated Weekly</div>
+            </div>
+            
+            <div class="test-card" data-category="gk">
+                <div class="card-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3>World History</h3>
+                <p>Ancient civilizations, world wars, revolutions and historical figures</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 60 Questions</span>
+                    <span><i class="fas fa-clock"></i> 75 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(4,'World History')">Start Test</button>
+                <div class="difficulty advanced">Advanced</div>
+            </div>
+            
+            <div class="test-card" data-category="courses">
+                <div class="card-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>SQL queries, normalization, transactions and database design patterns</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 35 Questions</span>
+                    <span><i class="fas fa-clock"></i> 50 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(5,'Database Management')">Start Test</button>
+                
+                <div class="difficulty intermediate">Intermediate</div>
+            </div>
+            
+            <div class="test-card" data-category="courses">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Cyber Security</h3>
+                <p>Network security, cryptography, ethical hacking and threat mitigation</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 55 Questions</span>
+                    <span><i class="fas fa-clock"></i> 90 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(6,'cyber Security')">Start Test</button>
+                <div class="difficulty advanced">Expert Level</div>
+            </div>
+            
+            <div class="test-card" data-category="programming">
+                <div class="card-icon">
+                    <i class="fab fa-java"></i>
+                </div>
+                <h3>Java Certification</h3>
+                <p>Core Java, multithreading, collections framework and JVM internals</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 70 Questions</span>
+                    <span><i class="fas fa-clock"></i> 120 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(7,'Java Certification')">Start Test</button>
+                <div class="difficulty advanced">Certification</div>
+            </div>
+            
+            <div class="test-card" data-category="gk">
+                <div class="card-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Science & Technology</h3>
+                <p>Latest discoveries, physics concepts, biotechnology and space research</p>
+                <div class="card-meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Questions</span>
+                    <span><i class="fas fa-clock"></i> 40 Minutes</span>
+                </div>
+                <button class="card-btn" onclick="startTest(8,'Science & Technology')">Start Test</button>
+                <div class="difficulty intermediate">Science Buffs</div>
+            </div>
+        </div>
+        
+        <button class="view-all-btn" onclick="window.location.href='tests.html'">
+            View All 150+ Tests <i class="fas fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose <span class="highlight">KnowledgeHub</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Results</h3>
+                <p>Get detailed analysis immediately after test completion with performance insights</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Progress Tracking</h3>
+                <p>Monitor your improvement with detailed analytics and personalized recommendations</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Friendly</h3>
+                <p>Access tests on any device with responsive design and offline capabilities</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- LOGIN POPUP -->
+    <div class="popup-overlay" id="loginOverlay">
+        <div class="popup-container" id="login">
+            <div class="popup-header">
+                <h3><i class="fas fa-sign-in-alt"></i> Login to KnowledgeHub</h3>
+                <button class="close-popup" onclick="closeAll()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="lemail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="lpass" placeholder="Password" required>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('lpass')"></i>
+                </div>
+                <div class="popup-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button class="popup-btn primary-btn" onclick="login()">Login Now</button>
+                <div class="popup-divider">
+                    <span>Or continue with</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Google</button>
+                    <button class="social-btn github-btn"><i class="fab fa-github"></i> GitHub</button>
+                </div>
+                <p class="popup-footer">Don't have an account? <a href="#" onclick="switchToRegister()">Register here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER POPUP -->
+    <div class="popup-overlay" id="registerOverlay">
+        <div class="popup-container" id="register">
+            <div class="popup-header">
+                <h3><i class="fas fa-user-plus"></i> Create Account</h3>
+                <button class="close-popup" onclick="closeAll()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="rname" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="remail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rpass" placeholder="Password (min. 8 characters)" required>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('rpass')"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rcpass" placeholder="Confirm Password" required>
+                </div>
+                <div class="popup-options">
+                    <label>
+                        <input type="checkbox" required> I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button class="popup-btn primary-btn" onclick="register()">Create Account</button>
+                <p class="popup-footer">Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <i class="fas fa-brain logo-icon"></i>
+                    <h3>KnowledgeHub<span class="logo-dot">.</span></h3>
+                </div>
+                <p>Master your skills with our comprehensive online examination platform.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">All Tests</a>
+                <a href="#">Practice Mode</a>
+                <a href="#">Leaderboard</a>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <a href="#">Programming</a>
+                <a href="#">General Knowledge</a>
+                <a href="#">Current Affairs</a>
+                <a href="#">Certification</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493a3c3939263b3d092227263e252c2d2e2c213c2b672a2624">[email&#160;protected]</a></p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Learning St, Education City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KnowledgeHub. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+            <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
